@@ -95,17 +95,26 @@ async function launches(){
               </h4>
               <p class="text-sm text-slate-400 flex items-center gap-2">
                 <i class="fas fa-building text-xs"></i>
-                SpaceX
+                  ${element.image.credit}
               </p>
             </div>
             <div class="space-y-2 mb-4">
               <div class="flex items-center gap-2 text-sm">
                 <i class="fas fa-calendar text-slate-500 w-4"></i>
-                <span class="text-slate-300">Mar 15, 2024</span>
+                <span class="text-slate-300">${new Date(element.net).toLocaleDateString("en-US", {
+                    month: "short",
+                    day: "numeric",
+                    year: "numeric",
+                    timeZone: "UTC"
+                })}</span>
               </div>
               <div class="flex items-center gap-2 text-sm">
                 <i class="fas fa-clock text-slate-500 w-4"></i>
-                <span class="text-slate-300">23:00 UTC</span>
+                <span class="text-slate-300">${new Date(element.net).toLocaleTimeString("en-US", {
+                    hour: "numeric",
+                    minute: "2-digit",
+                    timeZone: "UTC"
+                })}</span>
               </div>
               <div class="flex items-center gap-2 text-sm">
                 <i class="fas fa-rocket text-slate-500 w-4"></i>
